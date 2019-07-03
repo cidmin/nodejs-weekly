@@ -10,11 +10,17 @@ const URL = process.argv[2];
 console.log(URL)
 // logging for debugging purpose, to see if const actually worked
 
-request(URL, function(error, response, body) {
-  console.error('error:', error);
-  console.log('statusCode:', response && response.statusCode);
-  console.log(body);
-});
+if(process.argv[2] == undefined) {
+  console.log('put your damn argument, son!');
+} else {
+  request(URL, function(response, body) {
+    console.log('statusCode:', response && response.statusCode);
+    console.log(body);
+  });
+}
+
+
+
 
 /*
 Used "request" module. The first parameter passing was a hard-coded URL,
