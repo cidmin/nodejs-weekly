@@ -19,9 +19,6 @@ if(process.argv[2] == undefined) {
   });
 }
 
-
-
-
 /*
 Used "request" module. The first parameter passing was a hard-coded URL,
 so I just replaced it with my own const, URL. I honestly just copied and pasted
