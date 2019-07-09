@@ -1,16 +1,20 @@
 #!/usr/bin/env node
 // Added shebang
 
-var request = require("request");
+var request = require('request');
 // importing "request" module
 
 const URL = process.argv[2];
 // const of URL. Since node runs as "node filename -arg", [2] is the correct index
 
-console.log(URL)
+console.log('Checking response for', URL);
 // logging for debugging purpose, to see if const actually worked
 
-if (!URL.toLowerCase().includes('https' || 0 === URL.length)) {
+if( ! URL || 0 === URL.length) {
+  console.log('URL is empty'); 
+    return;
+  }
+if( ! URL.toLowerCase().includes('https')) {
   console.log('URL is accepted in HTTPS only');
 } else {
   request(URL, function(response, body) {
@@ -20,7 +24,9 @@ if (!URL.toLowerCase().includes('https' || 0 === URL.length)) {
 }
 
 /*
-First IF line is checking to see if the argument includes https, otherwise givin errors.
+First IF line checks to see if URL is passed as empty, then handles error.
+
+Second IF line is checking to see if the argument includes https, otherwise givin errors.
 
 If it passes the https string check, then it'll run REQUEST library to grab the response.
 Within resonse, it'll also print status code for the https call.
