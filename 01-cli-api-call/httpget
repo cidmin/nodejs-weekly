@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // Added shebang
 
-var request = require('request');
+import request from 'request';
 // importing "request" module
 
 const URL = process.argv[2];
