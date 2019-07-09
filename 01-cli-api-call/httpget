@@ -20,15 +20,9 @@ console.log(URL)
 }
 
 /*
-Used "request" module. The first parameter passing was a hard-coded URL,
-so I just replaced it with my own const, URL. I honestly just copied and pasted
-(error, response, body) from the library github, as referenced.
+First IF line is checking to see if the argument includes https, otherwise givin errors.
 
-First line is error. I would have to trigger it once the code enters error state,
-but I stil haven't figure out how.
-
-Second line of to return the status code of http call.
-
-Final line is to output the body of responses.
+If it passes the https string check, then it'll run REQUEST library to grab the response.
+Within resonse, it'll also print status code for the https call.
 
 */
