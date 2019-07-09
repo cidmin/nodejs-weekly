@@ -26,9 +26,9 @@ if( ! URL.toLowerCase().includes('https')) {
 /*
 First IF line checks to see if URL is passed as empty, then handles error.
 
-Second IF line is checking to see if the argument includes https, otherwise givin errors.
+Second IF line is checking to see if the argument includes https, otherwise handles errors.
 
-If it passes the https string check, then it'll run REQUEST library to grab the response.
-Within resonse, it'll also print status code for the https call.
+If it passes the https string check, then it'll run imported request library to grab the response.
+Before resonse, code will also print status code for the https call.
 
 */
