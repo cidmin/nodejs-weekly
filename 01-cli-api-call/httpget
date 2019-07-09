@@ -10,7 +10,7 @@ const URL = process.argv[2];
 console.log(URL)
 // logging for debugging purpose, to see if const actually worked
 
-  if (!URL.toLowerCase().includes('https' || 0 === URL.length)) {
+if (!URL.toLowerCase().includes('https' || 0 === URL.length)) {
   console.log('URL is accepted in HTTPS only');
 } else {
   request(URL, function(response, body) {
