@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // Added shebang
 
-import request from 'request';
+const request = require("request");
 // importing "request" module
 
 const URL = process.argv[2];
@@ -17,18 +17,21 @@ if( ! URL || 0 === URL.length) {
 if( ! URL.toLowerCase().includes('https')) {
   console.log('URL is accepted in HTTPS only');
 } else {
-  request(URL, function(response, body) {
-    console.log('statusCode:', response && response.statusCode);
-    console.log(body);
+  request(
+    { method: 'GET'
+    , uri: URL
+    , gzip: true
+    }
+  , function (error, response, body) {
+      console.log('Body response: ' + body)
+    }
+  )
+    .on('response', function(response) {
+      console.log('Status Code:', response.statusCode)
+      console.log(response.headers)
   });
 }
 
 /*
-First IF line checks to see if URL is passed as empty, then handles error.
-
-Second IF line is checking to see if the argument includes https, otherwise handles errors.
-
-If it passes the https string check, then it'll run imported request library to grab the response.
-Before resonse, code will also print status code for the https call.
 
 */
