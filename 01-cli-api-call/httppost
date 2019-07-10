@@ -4,7 +4,6 @@ const request = require("request");
 
 const URL = process.argv[2];
 const username = process.argv[3];
-
 const password = process.argv[4];
 
 console.log('Running POST to', URL);
@@ -22,7 +21,3 @@ if( ! URL.toLowerCase().includes('https')) {
     console.log(response.headers)
     })
   }
-
-/*
-
-*/

@@ -31,7 +31,3 @@ if( ! URL.toLowerCase().includes('https')) {
       console.log(response.headers)
   });
 }
-
-/*
-
-*/
