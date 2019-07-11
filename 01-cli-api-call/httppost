@@ -12,6 +12,10 @@ if( ! URL || 0 === URL.length) {
   console.log('URL is empty'); 
     return;
   }
+if( process.argv.length <= 4) {
+  console.log('Not enough arguments'); 
+    return;
+  }
 if( ! URL.toLowerCase().includes('https')) {
   console.log('URL is accepted in HTTPS only');
 } else {
